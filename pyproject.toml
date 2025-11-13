@@ -1,9 +1,27 @@
 [project]
-name = "kimi-cli"
-version = "0.54"
-description = "Kimi CLI is your next CLI agent."
+name = "cimi"
+version = "0.54.1"
+description = "Cimi - A CLI agent for software engineering tasks (forked from kimi-cli)"
 readme = "README.md"
 requires-python = ">=3.13"
+authors = [
+    {name = "abhishekbhakat", email = "abhishek.bhakat@hotmail.com"}
+]
+keywords = ["cli", "agent", "ai", "coding", "automation"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+]
+license = {text = "Apache-2.0"}
+repository = "https://github.com/abhishekbhakat/cimi"
+documentation = "https://github.com/abhishekbhakat/cimi#readme"
 dependencies = [
     "agent-client-protocol==0.6.3",
     "aiofiles==25.1.0",
@@ -44,7 +62,7 @@ module-name = ["kimi_cli"]
 source-exclude = ["tests/**/*", "src/kimi_cli/deps/**/*"]
 
 [project.scripts]
-kimi = "kimi_cli.cli:cli"
+cimi = "kimi_cli.cli:cli"
 
 [tool.ruff]
 line-length = 100

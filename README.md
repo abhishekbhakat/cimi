@@ -1,17 +1,11 @@
-# Kimi CLI
+# CIMI (Kimi CLI Clone)
 
-[![Commit Activity](https://img.shields.io/github/commit-activity/w/MoonshotAI/kimi-cli)](https://github.com/MoonshotAI/kimi-cli/graphs/commit-activity)
-[![Checks](https://img.shields.io/github/check-runs/MoonshotAI/kimi-cli/main)](https://github.com/MoonshotAI/kimi-cli/actions)
-[![Version](https://img.shields.io/pypi/v/kimi-cli)](https://pypi.org/project/kimi-cli/)
-[![Downloads](https://img.shields.io/pypi/dw/kimi-cli)](https://pypistats.org/packages/kimi-cli)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/MoonshotAI/kimi-cli)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.13%2B-blue)](https://www.python.org/)
 
-[中文](https://www.kimi.com/coding/docs/kimi-cli.html)
+**Cimi** is a CLI agent for software engineering tasks, forked from [kimi-cli](https://github.com/MoonshotAI/kimi-cli).
 
-Kimi CLI is a new CLI agent that can help you with your software development tasks and terminal operations.
-
-> [!IMPORTANT]
-> Kimi CLI is currently in technical preview.
+> **Note**: This is a fork of the original Kimi CLI project, renamed and adapted for separate distribution.
 
 ## Key features
 
@@ -25,34 +19,41 @@ Kimi CLI is a new CLI agent that can help you with your software development tas
 
 ## Installation
 
-Kimi CLI is published as a Python package on PyPI. We highly recommend installing it with [uv](https://docs.astral.sh/uv/). If you have not installed uv yet, please follow the instructions [here](https://docs.astral.sh/uv/getting-started/installation/) to install it first.
+Cimi is published as a Python package on PyPI. We highly recommend installing it with [uv](https://docs.astral.sh/uv/). If you have not installed uv yet, please follow the instructions [here](https://docs.astral.sh/uv/getting-started/installation/) to install it first.
 
-Once uv is installed, you can install Kimi CLI with:
+Once uv is installed, you can install Cimi with:
 
 ```sh
-uv tool install --python 3.13 kimi-cli
+uv tool install --python 3.13 cimi
 ```
 
-Run `kimi --help` to check if Kimi CLI is installed successfully.
+Run `cimi --help` to check if CIMI is installed successfully.
 
-> [!IMPORTANT]
-> Due to the security checks on macOS, the first time you run `kimi` command may take 10 seconds or more depending on your system environment.
+> **Note**: Due to the security checks on macOS, the first time you run `cimi` command may take 10 seconds or more depending on your system environment.
 
 ## Upgrading
 
-Upgrade Kimi CLI to the latest version with:
+Upgrade cimi to the latest version with:
 
 ```sh
-uv tool upgrade kimi-cli --no-cache
+uv tool upgrade cimi --no-cache
 ```
 
 ## Usage
 
-Run `kimi` command in the directory you want to work on, then send `/setup` to setup Kimi CLI:
+Run `cimi` command in the directory you want to work on, then send `/setup` to setup Cimi:
 
-![](./docs/images/setup.png)
+After setup, Cimi will be ready to use. You can send `/help` to get more information.
 
-After setup, Kimi CLI will be ready to use. You can send `/help` to get more information.
+## Differences from kimi-cli
+
+This fork maintains feature parity with the original kim-cli project. The only differences are:
+
+- **Package name**: `cimi` instead of `kimi-cli`
+- **Command name**: `cimi` instead of `kimi`
+- **Source repository**: Independent fork for separate development
+
+All functionality and features remain the same as the original project.
 
 ## Features
 
@@ -65,37 +66,21 @@ Kimi CLI is not only a coding agent, but also a shell. You can switch the mode b
 
 ### Zsh integration
 
-You can use Kimi CLI together with Zsh, to empower your shell experience with AI agent capabilities.
+You can use Cimi together with Zsh, to empower your shell experience with AI agent capabilities. Please refer to the [zsh-kimi-cli](https://github.com/MoonshotAI/zsh-kimi-cli) plugin for integration instructions.
 
-Install the [zsh-kimi-cli](https://github.com/MoonshotAI/zsh-kimi-cli) plugin via:
-
-```sh
-git clone https://github.com/MoonshotAI/zsh-kimi-cli.git \
-  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/kimi-cli
-```
-
-> [!NOTE]
-> If you are using a plugin manager other than Oh My Zsh, you may need to refer to the plugin's README for installation instructions.
-
-Then add `kimi-cli` to your Zsh plugin list in `~/.zshrc`:
-
-```sh
-plugins=(... kimi-cli)
-```
-
-After restarting Zsh, you can switch to agent mode by pressing `Ctrl-X`.
+> **Note**: The zsh plugin is designed for the original kimi-cli but should work with cimi with minimal modifications.
 
 ### ACP support
 
-Kimi CLI supports [Agent Client Protocol] out of the box. You can use it together with any ACP-compatible editor or IDE.
+Cimi supports [Agent Client Protocol] out of the box. You can use it together with any ACP-compatible editor or IDE.
 
-For example, to use Kimi CLI with [Zed](https://zed.dev/), add the following configuration to your `~/.config/zed/settings.json`:
+For example, to use Cimi with [Zed](https://zed.dev/), add the following configuration to your `~/.config/zed/settings.json`:
 
 ```json
 {
   "agent_servers": {
-    "Kimi CLI": {
-      "command": "kimi",
+    "Cimi": {
+      "command": "cimi",
       "args": ["--acp"],
       "env": {}
     }
@@ -103,7 +88,7 @@ For example, to use Kimi CLI with [Zed](https://zed.dev/), add the following con
 }
 ```
 
-Then you can create Kimi CLI threads in Zed's agent panel.
+Then you can create Cimi threads in Zed's agent panel.
 
 ### Using MCP tools
 
@@ -126,36 +111,44 @@ Kimi CLI supports the well-established MCP config convention. For example:
 }
 ```
 
-Run `kimi` with `--mcp-config-file` option to connect to the specified MCP servers:
+Run `cimi` with `--mcp-config-file` option to connect to the specified MCP servers:
 
 ```sh
-kimi --mcp-config-file /path/to/mcp.json
+cimi --mcp-config-file /path/to/mcp.json
 ```
 
 ## Development
 
-To develop Kimi CLI, run:
+To develop Cimi, run:
 
 ```sh
-git clone https://github.com/MoonshotAI/kimi-cli.git
-cd kimi-cli
+git clone https://github.com/yourusername/cimi.git
+cd cimi
 
 make prepare  # prepare the development environment
 ```
 
-Then you can start working on Kimi CLI.
+Then you can start working on Cimi.
 
 Refer to the following commands after you make changes:
 
 ```sh
-uv run kimi  # run Kimi CLI
+uv run cimi  # run CIMI
 
 make format  # format code
-make check  # run linting and type checking
-make test  # run tests
-make help  # show all make targets
+make check   # run linting and type checking
+make test    # run tests
+make help    # show all make targets
 ```
 
 ## Contributing
 
-We welcome contributions to Kimi CLI! Please refer to [CONTRIBUTING.md](./CONTRIBUTING.md) for more information.
+We welcome contributions to Cimi! Please fork the repository and submit pull requests.
+
+## Origin and License
+
+Cimi is a fork of [kimi-cli](https://github.com/MoonshotAI/kimi-cli) by Moonshot AI, licensed under the Apache License 2.0.
+
+## LICENSE
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.

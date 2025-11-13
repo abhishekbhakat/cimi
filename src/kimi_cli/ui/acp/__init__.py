@@ -183,14 +183,6 @@ class ACPAgent:
         while True:
             msg = await wire.receive()
 
-            assert self.run_state is not None
-            if isinstance(msg, ThinkPart) and not self.run_state.in_thinking:
-                await self._send_text("<think>\n")
-                self.run_state.in_thinking = True
-            if not isinstance(msg, ThinkPart) and self.run_state.in_thinking:
-                await self._send_text("\n\n</think>\n\n")
-                self.run_state.in_thinking = False
-
             match msg:
                 case StepBegin():
                     pass
@@ -203,7 +195,7 @@ class ACPAgent:
                 case StatusUpdate():
                     pass
                 case ThinkPart(think=think):
-                    await self._send_text(think)
+                    await self._send_think(think)
                 case TextPart(text=text):
                     await self._send_text(text)
                 case ContentPart():
@@ -231,6 +223,21 @@ class ACPAgent:
                 update=acp.schema.AgentMessageChunk(
                     content=acp.schema.TextContentBlock(type="text", text=text),
                     sessionUpdate="agent_message_chunk",
+                ),
+            )
+        )
+    
+    async def _send_think(self, think: str):
+        """Send thinking content to client."""
+        if not self.session_id:
+            return
+
+        await self.connection.sessionUpdate(
+            acp.SessionNotification(
+                sessionId=self.session_id,
+                update=acp.schema.AgentThoughtChunk(
+                    content=acp.schema.TextContentBlock(type="text", text=think),
+                    sessionUpdate="agent_thought_chunk",
                 ),
             )
         )

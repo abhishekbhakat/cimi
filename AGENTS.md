@@ -1,8 +1,15 @@
-# Kimi CLI - AI Coding Agent
+# CIMI - AI Coding Agent (Personal Fork)
+
+> **⚠️ DISCLAIMER**: This is a **personal fork** of the [original kimi-cli](https://github.com/MoonshotAI/kimi-cli) project. 
+> - For the official version, documentation, and contributions: **[Go to original repository](https://github.com/MoonshotAI/kimi-cli)**
+> - This fork exists for personal experimentation and may not be actively maintained
+> - **No contributions or issues are accepted here** - please direct everything upstream
 
 ## Project Overview
 
-Kimi CLI is an interactive command-line interface agent specializing in software engineering tasks. It's built with Python and provides a modular architecture for AI-powered development assistance. The project uses a sophisticated agent system with customizable tools, multiple UI modes, and extensive configuration options.
+CIMI (Kimi CLI Clone) is an interactive command-line interface agent specializing in software engineering tasks. It's built with Python and provides a modular architecture for AI-powered development assistance. The project uses a sophisticated agent system with customizable tools, multiple UI modes, and extensive configuration options.
+
+**Note**: While this fork is distributed as `cimi` on PyPI for personal use, all significant development and contributions should happen upstream in the original kimi-cli project.
 
 ## Technology Stack
 
@@ -91,7 +98,7 @@ uv run pyinstaller kimi.spec
 
 ### Configuration
 
-Configuration file: `~/.kimi/config.json`
+Configuration file: `~/.cimi/config.json`
 
 Default configuration includes:
 
@@ -177,11 +184,22 @@ Builtin variables available in system prompts:
 
 ## Deployment
 
-- **PyPI Package**: Distributed as `kimi-cli`
+- **PyPI Package**: Distributed as `cimi`
 - **Standalone Binary**: Built with PyInstaller
 - **Entry Point**: `kimi` command-line tool
-- **Configuration**: User-specific config in `~/.kimi/`
+- **Configuration**: User-specific config in `~/.cimi/`
+
+## Contributing & Development
+
+**⚠️ IMPORTANT**: This is a personal fork used primarily for experimentation and learning. 
+
+- **For bug reports, feature requests, and contributions**: Please visit the [original kimi-cli repository](https://github.com/MoonshotAI/kimi-cli)
+- **This fork may diverge** from the original project over time
+- **No guarantees** are made about maintaining compatibility with the upstream project
+- **Limited support** is available for issues specific to this fork
+
+Feel free to explore this codebase to understand how the agent system works, but for production use or collaborative development, the original kimi-cli project is strongly recommended.
 
 ## Version History
 
-This project follows semantic versioning. For detailed version history, release notes, and changes across all versions, please refer to `CHANGELOG.md` in the project root.
+This project follows semantic versioning. For detailed version history, release notes, and changes across all versions, please refer to `CHANGELOG.md` in the project root. Note that versioning in this fork is independent of the original kimi-cli project.

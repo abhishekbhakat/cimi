@@ -259,12 +259,12 @@ class ShellApp:
         return task
 
 
-_KIMI_BLUE = "dodger_blue1"
+_CIMI_GREEN = "dark_green"
 _LOGO = f"""\
-[{_KIMI_BLUE}]\
+[{_CIMI_GREEN}]\
 ▐█▛█▛█▌
 ▐█████▌\
-[{_KIMI_BLUE}]\
+[{_CIMI_GREEN}]\
 """
 
 
@@ -312,7 +312,7 @@ def _print_welcome_info(name: str, info_items: list[WelcomeInfoItem]) -> None:
     console.print(
         Panel(
             Group(*rows),
-            border_style=_KIMI_BLUE,
+            border_style=_CIMI_GREEN,
             expand=False,
             padding=(1, 2),
         )

@@ -21,7 +21,7 @@ class Reload(Exception):
 cli = typer.Typer(
     add_completion=False,
     context_settings={"help_option_names": ["-h", "--help"]},
-    help="Kimi, your next CLI agent.",
+    help="CIMI, your next CLI agent.",
 )
 
 UIMode = Literal["shell", "print", "acp", "wire"]
@@ -31,12 +31,12 @@ OutputFormat = Literal["text", "stream-json"]
 
 def _version_callback(value: bool) -> None:
     if value:
-        typer.echo(f"kimi, version {VERSION}")
+        typer.echo(f"cimi, version {VERSION}")
         raise typer.Exit()
 
 
 @cli.command()
-def kimi(
+def cimi(
     version: Annotated[
         bool,
         typer.Option(
@@ -194,7 +194,7 @@ def kimi(
         ),
     ] = None,
 ):
-    """Kimi, your next CLI agent."""
+    """CIMI, your next CLI agent."""
     del version  # handled in the callback
 
     from kimi_cli.app import KimiCLI

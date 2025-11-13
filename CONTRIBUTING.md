@@ -1,8 +1,11 @@
-# Contributing to Kimi CLI
+# Contributing to CIMI
 
-Thank you for being interested in contributing to Kimi CLI!
+**IMPORTANT**: Contributions to this repository are not accepted. This is a personal fork of the original [kimi-cli](https://github.com/MoonshotAI/kimi-cli) project.
 
-We welcome all kinds of contributions, including bug fixes, features, document improvements, typo fixes, etc. To maintain a high-quality codebase and user experience, we provide the following guidelines for contributions:
+## For Contributors
 
-1. We only merge pull requests that aligns with our roadmap. For any pull request that introduces changes larger than 100 lines of code, we highly recommend discussing with us by [raising an issue](https://github.com/MoonshotAI/kimi-cli/issues) or in an existing issue before you start working on it. Otherwise your pull request may be closed or ignored without review.
-2. We insist on high code quality. Please ensure your code is as good as, if not better than, the code written by frontier coding agents. Changes may be requested before your pull request can be merged.
+While you are free to use, modify, and distribute this code under the terms of the Apache 2.0 license, **all contributions, bug reports, and feature requests should be directed to the [original kimi-cli repository](https://github.com/MoonshotAI/kimi-cli)**.
+
+This fork exists primarily for personal use and experimentation. For the best chance of having your contributions accepted and maintaining compatibility with the broader community, please contribute upstream to the original project maintained by Moonshot AI.
+
+Thank you for your understanding!
